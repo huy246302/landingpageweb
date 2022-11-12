@@ -19,8 +19,9 @@ const Header = () => {
                                 <li class="scroll-to-section"><a href="/service">Services</a></li>
                                 <li class="scroll-to-section"><a href="/about">About</a></li>
                                 <li class="scroll-to-section"><a href="/pricing">Pricing</a></li>
+                                <li class="scroll-to-section"><a href="/item">Item</a></li>
                                 <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
-                                <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>
+                                <li><div class="gradient-button"><a id="modal_trigger" href="/login"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
