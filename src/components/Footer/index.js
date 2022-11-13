@@ -17,7 +17,7 @@ const Footer = () => {
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
                                     <fieldset>
-                                        <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required />
+                                        <input type="address" name="address" class="email" placeholder="Email Address..." autoComplete="on" required />
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">

@@ -1418,6 +1418,11 @@ The Clients
 The Clients
 ---------------------------------------------
 */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .pricing-tables {
     padding-top: 130px;
