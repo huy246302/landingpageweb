@@ -10,18 +10,18 @@ const Client = () => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
                         <div className="section-heading">
-                            <h4>Check What <em>The Clients Say</em> About Our App Dev</h4>
+                            <h4>những <em>thành viên</em> làm app dev</h4>
                             <img src={headinglinedec} alt="" />
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+                            <p>Đây là những thành viên làm nên dev app</p>
                         </div>
                     </div>
                     <div className="col-lg-12">
                         <div className="naccs">
                             <div className="grid">
                                 <div className="row">
-                                    <div className="col-lg-7 align-self-center">
+                                    <div className="align-self-center">
                                         <div className="menu">
-                                            <div className="first-thumb active">
+                                            <div>
                                                 <div className="thumb">
                                                     <div className="row">
                                                         <div className="col-lg-4 col-sm-4 col-12">
@@ -130,28 +130,6 @@ const Client = () => {
                                     </div>
                                     <div className="col-lg-5">
                                         <ul className="nacc">
-                                            <li className="active">
-                                                <div>
-                                                    <div className="thumb">
-                                                        <div className="row">
-                                                            <div className="col-lg-12">
-                                                                <div className="client-content">
-                                                                    <img src={quote} alt="" />
-                                                                    <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                                                        lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                                                                </div>
-                                                                <div className="down-content">
-                                                                    <img src={client_image} alt="" />
-                                                                    <div className="right-content">
-                                                                        <h4>David Martino</h4>
-                                                                        <span>CEO of David Company</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
                                             <li>
                                                 <div>
                                                     <div className="thumb">

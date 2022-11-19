@@ -12,15 +12,15 @@ const Banner = () => {
                                 <div className="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                                     <div className="row">
                                         <div className="col-lg-12">
-                                            <h2>Get The Latest App From App Stores</h2>
-                                            <p>Chain App Dev is an app landing page HTML5 template based on Bootstrap v5.1.3 CSS layout provided by TemplateMo, a great website to download free CSS templates.</p>
+                                            <h2>Đặt hàng mớt nhất từ web Foody</h2>
+                                            <p>Foody là một app landing page được thiết kế mới mẻ và độc đáo,phù hợp với nhu cầu người dùng</p>
                                         </div>
                                         <div className="col-lg-12">
                                             <div className="white-button first-button scroll-to-section">
-                                                <a href="#contact">Free Quote <i className="fab fa-apple"></i></a>
+                                                <a href="#contact">Download từ ios<i className="fab fa-apple"></i></a>
                                             </div>
                                             <div className="white-button scroll-to-section">
-                                                <a href="#contact">Free Quote <i className="fab fa-google-play"></i></a>
+                                                <a href="#contact">Download từ android<i className="fab fa-google-play"></i></a>
                                             </div>
                                         </div>
                                     </div>

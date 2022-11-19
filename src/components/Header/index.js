@@ -15,13 +15,13 @@ const Header = () => {
                             {/* <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** --> */}
                             <ul className="nav">
-                                <li className="scroll-to-section"><a href="/" className="active">Home</a></li>
-                                <li className="scroll-to-section"><a href="/service">Services</a></li>
-                                <li className="scroll-to-section"><a href="/about">About</a></li>
-                                <li className="scroll-to-section"><a href="/pricing">Pricing</a></li>
-                                <li className="scroll-to-section"><a href="/item">Item</a></li>
-                                <li className="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
-                                <li><div className="gradient-button"><a id="modal_trigger" href="/login"><i className="fa fa-sign-in-alt"></i> Sign In Now</a></div></li>
+                                <li className="scroll-to-section"><a href="/" className="active">Trang chủ</a></li>
+                                <li className="scroll-to-section"><a href="/service">Dịch vụ</a></li>
+                                <li className="scroll-to-section"><a href="/about">Thông tin</a></li>
+                                <li className="scroll-to-section"><a href="/pricing">Mức giá</a></li>
+                                <li className="scroll-to-section"><a href="/item">Sản phẩm</a></li>
+                                <li className="scroll-to-section"><a href="#newsletter">Thông báo</a></li>
+                                <li><div className="gradient-button"><a id="modal_trigger" href="/login"><i className="fa fa-sign-in-alt"></i> Đăng nhập ngay</a></div></li>
                             </ul>
                             <a className='menu-trigger'>
                                 <span>Menu</span>

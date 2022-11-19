@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
                         <div className="section-heading">
-                            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+                            <h4>Gia nhập danh sách nhận mail để nhận tin tức &amp; thông tin mới nhất</h4>
                         </div>
                     </div>
                     <div className="col-lg-6 offset-lg-3">
@@ -17,12 +17,12 @@ const Footer = () => {
                             <div className="row">
                                 <div className="col-lg-6 col-sm-6">
                                     <fieldset>
-                                        <input type="address" name="address" className="email" placeholder="Email Address..." autoComplete="on" required />
+                                        <input type="address" name="address" className="email" placeholder="Địa chỉ email..." autoComplete="on" required />
                                     </fieldset>
                                 </div>
                                 <div className="col-lg-6 col-sm-6">
                                     <fieldset>
-                                        <button type="submit" className="main-button">Subscribe Now <i className="fa fa-angle-right"></i></button>
+                                        <button type="submit" className="main-button">Đăng ký theo dõi <i className="fa fa-angle-right"></i></button>
                                     </fieldset>
                                 </div>
                             </div>
@@ -30,61 +30,21 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-3">
+                    <div className="col-lg-6">
                         <div className="footer-widget">
-                            <h4>Contact Us</h4>
-                            <p>Rio de Janeiro - RJ, 22795-008, Brazil</p>
-                            <p><a href="#">010-020-0340</a></p>
+                            <h4>Liên hệ</h4>
+                            {/* <p>Rio de Janeiro - RJ, 22795-008, Brazil</p> */}
+                            <p><a href="#">123456789</a></p>
                             <p><a href="#">info@company.co</a></p>
                         </div>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-6">
                         <div className="footer-widget">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Pricing</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Pricing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-3">
-                        <div className="footer-widget">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li><a href="#">Free Apps</a></li>
-                                <li><a href="#">App Engine</a></li>
-                                <li><a href="#">Programming</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">App News</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="#">App Dev Team</a></li>
-                                <li><a href="#">Digital Web</a></li>
-                                <li><a href="#">Normal Apps</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-3">
-                        <div className="footer-widget">
-                            <h4>About Our Company</h4>
-                            <div className="logo">
-                                <img src={Logo2} alt="" />
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-12">
-                        <div className="copyright-text">
-                            <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved.
-                                <br />Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+                            <h4>Thông tin về nhóm</h4>
+                                <li><a href="/">Trang chủ</a></li>
+                                <li><a href="/service">Dịch vụ</a></li>
+                                <li><a href="/about">Thông tin</a></li>
+                                <li><a href="/pricing">Mức giá</a></li>
                         </div>
                     </div>
                 </div>

@@ -9,41 +9,36 @@ const About = () => {
                 <div className="row">
                     <div className="col-lg-6 align-self-center">
                         <div className="section-heading">
-                            <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+                            <h4>Về <em>những gì nhóm làm</em></h4>
                             <img src={Logo6} alt="" />
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+                            <p>Qua quá trình 3 tháng trao đổi và giải quyết,nhóm em đã làm những công việc cần thiết để lập trình nên web app đặt hàng foody</p>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="box-item">
-                                    <h4><a href="#">Maintance Problems</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                                    <h4><a href="#">Xử lý các vấn đề</a></h4>
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="box-item">
-                                    <h4><a href="#">24/7 Support &amp; Help</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                                    <h4><a href="#">24/7 hỗ trợ &amp; trợ giúp</a></h4>
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="box-item">
-                                    <h4><a href="#">Fixing Issues About</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                                    <h4><a href="#">Duy trì app</a></h4>
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="box-item">
-                                    <h4><a href="#">Co. Development</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                                    <h4><a href="#">Phát triển các chức năng</a></h4>
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut labore et dolore adipiscing  magna.</p>
                                 <div className="gradient-button">
-                                    <a href="#">Start 14-Day Free Trial</a>
+                                    <a href="#">Bắt đầu 14-Day dùng thử</a>
                                 </div>
-                                <span>*No Credit Card Required</span>
+                                <span>*Không cần thẻ tín dụng</span>
                             </div>
                         </div>
                     </div>
