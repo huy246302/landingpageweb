@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { employeesData } from '../../data';
+import { productsData } from '../../data';
 
 const Dashboard = ({ setIsAuthenticated }) => {
-    const [employees, setEmployees] = useState(employeesData);
+    const [products, setEmployees] = useState(productsData);
     const [selectedEmployee, setSelectedEmployee] = useState(null);
     const [isAdding, setIsAdding] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -14,9 +14,9 @@ const Dashboard = ({ setIsAuthenticated }) => {
     }, []);
   
     const handleEdit = id => {
-      const [employee] = employees.filter(employee => employee.id === id);
+      const [product] = products.filter(product => product.id === id);
   
-      setSelectedEmployee(employee);
+      setSelectedEmployee(product);
       setIsEditing(true);
     };
   
@@ -30,17 +30,17 @@ const Dashboard = ({ setIsAuthenticated }) => {
         cancelButtonText: 'No, cancel!',
       }).then(result => {
         if (result.value) {
-          const [employee] = employees.filter(employee => employee.id === id);
+          const [product] = products.filter(product => product.id === id);
   
           Swal.fire({
             icon: 'success',
             title: 'Deleted!',
-            text: `${employee.firstName} ${employee.lastName}'s data has been deleted.`,
+            text: `${product.prodName} ${product.lastName}'s data has been deleted.`,
             showConfirmButton: false,
             timer: 1500,
           });
   
-          const employeesCopy = employees.filter(employee => employee.id !== id);
+          const employeesCopy = products.filter(product => product.id !== id);
           localStorage.setItem('employees_data', JSON.stringify(employeesCopy));
           setEmployees(employeesCopy);
         }
@@ -50,91 +50,99 @@ const Dashboard = ({ setIsAuthenticated }) => {
     const Header = ({ setIsAdding, setIsAuthenticated }) => {
         return (
           <header>
-            <h1>Employee Management Software</h1>
+            <h1>Product List Dashboard</h1>
             <div style={{ marginTop: '30px', marginBottom: '18px' }}>
-              <button onClick={() => setIsAdding(true)}>Add Employee</button>
+              <button onClick={() => setIsAdding(true)}>Add Product</button>
             </div>
           </header>
         );
     };
 
-    const Table = ({ employees, handleEdit, handleDelete }) => {
-        employees.forEach((employee, i) => {
-            employee.id = i + 1;
-        });
-        
-        const formatter = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: null,
-        });
-        
-        return (
-            <div className="contain-table">
-            <table className="striped-table">
-                <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Salary</th>
-                    <th>Date</th>
-                    <th colSpan={2} className="text-center">
-                    Actions
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                {employees.length > 0 ? (
-                    employees.map((employee, i) => (
-                    <tr key={employee.id}>
-                        <td>{i + 1}</td>
-                        <td>{employee.firstName}</td>
-                        <td>{employee.lastName}</td>
-                        <td>{employee.email}</td>
-                        <td>{formatter.format(employee.salary)}</td>
-                        <td>{employee.date} </td>
-                        <td className="text-right">
-                        <button
-                            onClick={() => handleEdit(employee.id)}
-                            className="button muted-button"
-                        >
-                            Edit
-                        </button>
-                        </td>
-                        <td className="text-left">
-                        <button
-                            onClick={() => handleDelete(employee.id)}
-                            className="button muted-button"
-                        >
-                            Delete
-                        </button>
-                        </td>
-                    </tr>
-                    ))
-                ) : (
-                    <tr>
-                    <td colSpan={7}>No Employees</td>
-                    </tr>
-                )}
-                </tbody>
-            </table>
-            </div>
-        );
+    const Table = ({ products, handleEdit, handleDelete }) => {
+      console.log('products',products);
+      products.forEach((product, i) => {
+          product.id = i + 1;
+      });
+      
+      const formatter = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: null,
+      });
+      
+      return (
+          <div className="contain-table">
+          <table className="striped-table">
+              <thead>
+              <tr>
+                  <th>No.</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Salary</th>
+                  <th>Date</th>
+                  <th colSpan={2} className="text-center">
+                  Actions
+                  </th>
+              </tr>
+              </thead>
+              <tbody>
+              {products.length > 0 ? (
+                  products.map((product, i) => (
+                  <tr key={product.id}>
+                      <td>{i + 1}</td>
+                      <td><img src={product.image} alt="Khong co hinh" style={{
+                        border:3,
+                        height:100,
+                        width:100,
+                      }}></img></td>
+                      <td>{product.firstName}</td>
+                      <td>{product.lastName}</td>
+                      <td>{product.description}</td>
+                      <td>{formatter.format(product.salary)}</td>
+                      <td>{product.date} </td>
+                      <td className="text-right">
+                      <button
+                          onClick={() => handleEdit(product.id)}
+                          className="button muted-button"
+                      >
+                          Edit
+                      </button>
+                      </td>
+                      <td className="text-left">
+                      <button
+                          onClick={() => handleDelete(product.id)}
+                          className="button muted-button"
+                      >
+                          Delete
+                      </button>
+                      </td>
+                  </tr>
+                  ))
+              ) : (
+                  <tr>
+                  <td colSpan={7}>No Employees</td>
+                  </tr>
+              )}
+              </tbody>
+          </table>
+          </div>
+      );
     };
 
-    const Add = ({ employees, setEmployees, setIsAdding }) => {
-        const [firstName, setFirstName] = useState('');
+    const Add = ({ products, setEmployees, setIsAdding }) => {
+        const [prodName, setProdName] = useState('');
         const [lastName, setLastName] = useState('');
-        const [email, setEmail] = useState('');
+        const [description, setEmail] = useState('');
         const [salary, setSalary] = useState('');
         const [date, setDate] = useState('');
+        const [image, setImage] = useState(null);
       
         const handleAdd = e => {
           e.preventDefault();
       
-          if (!firstName || !lastName || !email || !salary || !date) {
+          if (!prodName || !lastName || !description || !salary || !date) {
             return Swal.fire({
               icon: 'error',
               title: 'Error!',
@@ -143,25 +151,26 @@ const Dashboard = ({ setIsAuthenticated }) => {
             });
           }
       
-          const id = employees.length + 1;
+          const id = products.length + 1;
           const newEmployee = {
             id,
-            firstName,
+            image,
+            prodName,
             lastName,
-            email,
+            description,
             salary,
             date,
           };
       
-          employees.push(newEmployee);
-          localStorage.setItem('employees_data', JSON.stringify(employees));
-          setEmployees(employees);
+          products.push(newEmployee);
+          localStorage.setItem('employees_data', JSON.stringify(products));
+          setEmployees(products);
           setIsAdding(false);
       
           Swal.fire({
             icon: 'success',
             title: 'Added!',
-            text: `${firstName} ${lastName}'s data has been Added.`,
+            text: `${prodName} ${lastName}'s data has been Added.`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -170,14 +179,22 @@ const Dashboard = ({ setIsAuthenticated }) => {
         return (
           <div className="small-container">
             <form onSubmit={handleAdd}>
-              <h1>Add Employee</h1>
-              <label htmlFor="firstName">First Name</label>
+              <h1>Add Product</h1>
+              <label htmlFor="prodName">Image</label>
               <input
-                id="firstName"
+                id="image"
+                type="file"
+                name="image"
+                value={image}
+                onChange={e => setImage(e.target.value)}
+              />
+              <label htmlFor="prodName">First Name</label>
+              <input
+                id="prodName"
                 type="text"
-                name="firstName"
-                value={firstName}
-                onChange={e => setFirstName(e.target.value)}
+                name="prodName"
+                value={prodName}
+                onChange={e => setProdName(e.target.value)}
               />
               <label htmlFor="lastName">Last Name</label>
               <input
@@ -187,12 +204,12 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={lastName}
                 onChange={e => setLastName(e.target.value)}
               />
-              <label htmlFor="email">Email</label>
+              <label htmlFor="description">Email</label>
               <input
-                id="email"
-                type="email"
-                name="email"
-                value={email}
+                id="description"
+                type="description"
+                name="description"
+                value={description}
                 onChange={e => setEmail(e.target.value)}
               />
               <label htmlFor="salary">Salary ($)</label>
@@ -226,19 +243,19 @@ const Dashboard = ({ setIsAuthenticated }) => {
         );
     };
 
-    const Edit = ({ employees, selectedEmployee, setEmployees, setIsEditing }) => {
+    const Edit = ({ products, selectedEmployee, setEmployees, setIsEditing }) => {
         const id = selectedEmployee.id;
       
-        const [firstName, setFirstName] = useState(selectedEmployee.firstName);
+        const [prodName, setProdName] = useState(selectedEmployee.prodName);
         const [lastName, setLastName] = useState(selectedEmployee.lastName);
-        const [email, setEmail] = useState(selectedEmployee.email);
+        const [description, setEmail] = useState(selectedEmployee.description);
         const [salary, setSalary] = useState(selectedEmployee.salary);
         const [date, setDate] = useState(selectedEmployee.date);
       
         const handleUpdate = e => {
           e.preventDefault();
       
-          if (!firstName || !lastName || !email || !salary || !date) {
+          if (!prodName || !lastName || !description || !salary || !date) {
             return Swal.fire({
               icon: 'error',
               title: 'Error!',
@@ -247,30 +264,30 @@ const Dashboard = ({ setIsAuthenticated }) => {
             });
           }
       
-          const employee = {
+          const product = {
             id,
-            firstName,
+            prodName,
             lastName,
-            email,
+            description,
             salary,
             date,
           };
       
-          for (let i = 0; i < employees.length; i++) {
-            if (employees[i].id === id) {
-              employees.splice(i, 1, employee);
+          for (let i = 0; i < products.length; i++) {
+            if (products[i].id === id) {
+              products.splice(i, 1, product);
               break;
             }
           }
       
-          localStorage.setItem('employees_data', JSON.stringify(employees));
-          setEmployees(employees);
+          localStorage.setItem('employees_data', JSON.stringify(products));
+          setEmployees(products);
           setIsEditing(false);
       
           Swal.fire({
             icon: 'success',
             title: 'Updated!',
-            text: `${employee.firstName} ${employee.lastName}'s data has been updated.`,
+            text: `${product.prodName} ${product.lastName}'s data has been updated.`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -279,14 +296,14 @@ const Dashboard = ({ setIsAuthenticated }) => {
         return (
           <div className="small-container">
             <form onSubmit={handleUpdate}>
-              <h1>Edit Employee</h1>
-              <label htmlFor="firstName">First Name</label>
+              <h1>Edit Product</h1>
+              <label htmlFor="prodName">First Name</label>
               <input
-                id="firstName"
+                id="prodName"
                 type="text"
-                name="firstName"
-                value={firstName}
-                onChange={e => setFirstName(e.target.value)}
+                name="prodName"
+                value={prodName}
+                onChange={e => setProdName(e.target.value)}
               />
               <label htmlFor="lastName">Last Name</label>
               <input
@@ -296,12 +313,12 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={lastName}
                 onChange={e => setLastName(e.target.value)}
               />
-              <label htmlFor="email">Email</label>
+              <label htmlFor="description">Email</label>
               <input
-                id="email"
-                type="email"
-                name="email"
-                value={email}
+                id="description"
+                type="description"
+                name="description"
+                value={description}
                 onChange={e => setEmail(e.target.value)}
               />
               <label htmlFor="salary">Salary ($)</label>
@@ -344,7 +361,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
               setIsAuthenticated={setIsAuthenticated}
             />
             <Table
-              employees={employees}
+              products={products}
               handleEdit={handleEdit}
               handleDelete={handleDelete}
             />
@@ -352,14 +369,14 @@ const Dashboard = ({ setIsAuthenticated }) => {
         )}
         {isAdding && (
           <Add
-            employees={employees}
+            products={products}
             setEmployees={setEmployees}
             setIsAdding={setIsAdding}
           />
         )}
         {isEditing && (
           <Edit
-            employees={employees}
+            products={products}
             selectedEmployee={selectedEmployee}
             setEmployees={setEmployees}
             setIsEditing={setIsEditing}
