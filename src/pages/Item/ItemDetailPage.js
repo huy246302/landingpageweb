@@ -1,5 +1,5 @@
-import {useParams} from "react-router-dom"
-import React from 'react'
+import {useParams} from "react-router-dom";
+import React from 'react';
 
 export function ItemDetailPage(props) {
     const {id} = useParams();
@@ -7,7 +7,11 @@ export function ItemDetailPage(props) {
     
     return (
         <div className="container">
-                <div>{id}</div>
+                <div className="row product pricing-tables">
+                    <div>
+                        {id}
+                    </div>
+                </div>
         </div>
     )
 }
