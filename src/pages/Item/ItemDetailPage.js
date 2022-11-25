@@ -20,7 +20,7 @@ export function ItemDetailPage(props) {
                         <div class="col-lg-4">
                             <div class="right-content">
                                 <h4>{product.prodName}</h4>
-                                <span class="price">{product.salary} VNĐ</span>
+                                <span class="price">{product.price} VNĐ</span>
                                 <h4>Mô tả</h4>
                                 <span>{product.description}</span>
                                 <div class="quantity-content">
@@ -36,7 +36,7 @@ export function ItemDetailPage(props) {
                                     </div>
                                 </div>
                                 <div class="total">
-                                    <h4>Tổng cộng {product.salary} VNĐ</h4>
+                                    <h4>Tổng cộng {product.price} VNĐ</h4>
                                     <div class="main-border-button"><a href="#">Add To Cart</a></div>
                                 </div>
                             </div>
