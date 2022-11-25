@@ -10,6 +10,7 @@ import { LoginPage } from "./pages/Login/LoginPage";
 import { PageLayout} from "./pages/Layout/PageLayout";
 import { ItemDetailPage } from "./pages/Item/ItemDetailPage";
 import { DashboardPage } from "./pages/Dashboard/DashboardPage";
+import { RegisterPage } from "./pages/Register/RegisterPage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -32,6 +33,7 @@ function App() {
         </Route>
         <Route path="/dashboard" element={<DashboardPage setIsAuthenticated={setIsAuthenticated} />}/>
         <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated}/>}/>
+        <Route path="/register" element={<RegisterPage/>}/>
       </Routes>
     </>
   );

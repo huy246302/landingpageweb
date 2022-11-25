@@ -25,11 +25,10 @@ const Client = () => {
                                                 <div className="thumb">
                                                     <div className="row">
                                                         <div className="col-lg-4 col-sm-4 col-12">
-                                                            <h4>David Martino Co</h4>
-                                                            <span className="date">30 November 2021</span>
+                                                            <h4>Vỏ Phát Tài</h4>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                            <span className="category">Financial Apps</span>
+                                                            <span className="category">Backend</span>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 col-12">
                                                             <i className="fa fa-star"></i>
@@ -37,7 +36,7 @@ const Client = () => {
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
-                                                            <span className="rating">4.8</span>
+                                                            <span className="rating">5</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -46,11 +45,10 @@ const Client = () => {
                                                 <div className="thumb">
                                                     <div className="row">
                                                         <div className="col-lg-4 col-sm-4 col-12">
-                                                            <h4>Jake Harris Nyo</h4>
-                                                            <span className="date">29 November 2021</span>
+                                                            <h4>Nguyễn Huy</h4>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                            <span className="category">Digital Business</span>
+                                                            <span className="category">Frontend</span>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 col-12">
                                                             <i className="fa fa-star"></i>
@@ -58,7 +56,7 @@ const Client = () => {
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
-                                                            <span className="rating">4.5</span>
+                                                            <span className="rating">5</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -67,11 +65,10 @@ const Client = () => {
                                                 <div className="thumb">
                                                     <div className="row">
                                                         <div className="col-lg-4 col-sm-4 col-12">
-                                                            <h4>May Catherina</h4>
-                                                            <span className="date">27 November 2021</span>
+                                                            <h4>Trần Tấn Tài</h4>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                            <span className="category">Business &amp; Economics</span>
+                                                            <span className="category">Frontend</span>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 col-12">
                                                             <i className="fa fa-star"></i>
@@ -79,7 +76,7 @@ const Client = () => {
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
-                                                            <span className="rating">4.7</span>
+                                                            <span className="rating">5</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,11 +85,10 @@ const Client = () => {
                                                 <div className="thumb">
                                                     <div className="row">
                                                         <div className="col-lg-4 col-sm-4 col-12">
-                                                            <h4>Random User</h4>
-                                                            <span className="date">24 November 2021</span>
+                                                            <h4>Trần Quang Khải</h4>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                            <span className="category">New App Ecosystem</span>
+                                                            <span className="category">Backend</span>
                                                         </div>
                                                         <div className="col-lg-4 col-sm-4 col-12">
                                                             <i className="fa fa-star"></i>
@@ -100,28 +96,7 @@ const Client = () => {
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
                                                             <i className="fa fa-star"></i>
-                                                            <span className="rating">3.9</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="last-thumb">
-                                                <div className="thumb">
-                                                    <div className="row">
-                                                        <div className="col-lg-4 col-sm-4 col-12">
-                                                            <h4>Mark Amber Do</h4>
-                                                            <span className="date">21 November 2021</span>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                                                            <span className="category">Web Development</span>
-                                                        </div>
-                                                        <div className="col-lg-4 col-sm-4 col-12">
-                                                            <i className="fa fa-star"></i>
-                                                            <i className="fa fa-star"></i>
-                                                            <i className="fa fa-star"></i>
-                                                            <i className="fa fa-star"></i>
-                                                            <i className="fa fa-star"></i>
-                                                            <span className="rating">4.3</span>
+                                                            <span className="rating">5</span>
                                                         </div>
                                                     </div>
                                                 </div>
