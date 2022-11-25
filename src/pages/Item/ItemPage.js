@@ -16,8 +16,8 @@ return(
                     </div>
                     <div className="col-md-6 product-imformation">
                       <h4>{content.prodName}</h4>
-                      <h4>{content.description}</h4>
-                      <h4>{content.date}</h4>
+                      <h4>Xuất xứ:{content.description}</h4>
+                      <h4>Ngày nhập:{content.date}</h4>
                     </div>
                     <div className='col-md-2 product-price'>
                       <h4>{content.price} VNĐ</h4>

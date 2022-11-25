@@ -3,14 +3,14 @@ import Swal from 'sweetalert2';
 import { productsData } from '../../data';
 
 const Dashboard = ({ setIsAuthenticated }) => {
-    const [products, setEmployees] = useState(productsData);
+    const [products, setProductsData] = useState(productsData);
     const [selectedEmployee, setSelectedEmployee] = useState(null);
     const [isAdding, setIsAdding] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
   
     useEffect(() => {
       const data = JSON.parse(localStorage.getItem('employees_data'));
-      if (data !== null && Object.keys(data).length !== 0) setEmployees(data);
+      if (data !== null && Object.keys(data).length !== 0) setProductsData(data);
     }, []);
   
     const handleEdit = id => {
@@ -42,7 +42,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
   
           const employeesCopy = products.filter(product => product.id !== id);
           localStorage.setItem('employees_data', JSON.stringify(employeesCopy));
-          setEmployees(employeesCopy);
+          setProductsData(employeesCopy);
         }
       });
     };
@@ -99,7 +99,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
                       }}></img></td>
                       <td>{product.firstName}</td>
                       <td>{product.lastName}</td>
-                      <td>{product.description}</td>
+                      <td>{product.email}</td>
                       <td>{formatter.format(product.salary)}</td>
                       <td>{product.date} </td>
                       <td className="text-right">
@@ -131,7 +131,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
       );
     };
 
-    const Add = ({ products, setEmployees, setIsAdding }) => {
+    const Add = ({ products, setProductsData, setIsAdding }) => {
         const [prodName, setProdName] = useState('');
         const [lastName, setLastName] = useState('');
         const [description, setEmail] = useState('');
@@ -164,7 +164,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
       
           products.push(newEmployee);
           localStorage.setItem('employees_data', JSON.stringify(products));
-          setEmployees(products);
+          setProductsData(products);
           setIsAdding(false);
       
           Swal.fire({
@@ -243,7 +243,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
         );
     };
 
-    const Edit = ({ products, selectedEmployee, setEmployees, setIsEditing }) => {
+    const Edit = ({ products, selectedEmployee, setProductsData, setIsEditing }) => {
         const id = selectedEmployee.id;
       
         const [prodName, setProdName] = useState(selectedEmployee.prodName);
@@ -281,7 +281,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           }
       
           localStorage.setItem('employees_data', JSON.stringify(products));
-          setEmployees(products);
+          setProductsData(products);
           setIsEditing(false);
       
           Swal.fire({
@@ -370,7 +370,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
         {isAdding && (
           <Add
             products={products}
-            setEmployees={setEmployees}
+            setProductsData={setProductsData}
             setIsAdding={setIsAdding}
           />
         )}
@@ -378,7 +378,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           <Edit
             products={products}
             selectedEmployee={selectedEmployee}
-            setEmployees={setEmployees}
+            setProductsData={setProductsData}
             setIsEditing={setIsEditing}
           />
         )}
