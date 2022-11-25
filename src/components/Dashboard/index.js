@@ -4,7 +4,7 @@ import { productsData } from '../../data';
 
 const Dashboard = ({ setIsAuthenticated }) => {
     const [products, setProductsData] = useState(productsData);
-    const [selectedEmployee, setSelectedEmployee] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [isAdding, setIsAdding] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
   
@@ -16,7 +16,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
     const handleEdit = id => {
       const [product] = products.filter(product => product.id === id);
   
-      setSelectedEmployee(product);
+      setSelectedProduct(product);
       setIsEditing(true);
     };
   
@@ -35,7 +35,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           Swal.fire({
             icon: 'success',
             title: 'Deleted!',
-            text: `${product.prodName} ${product.lastName}'s data has been deleted.`,
+            text: `${product.prodName} ${product.origin}'s data has been deleted.`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -52,7 +52,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           <header>
             <h1>Product List Dashboard</h1>
             <div style={{ marginTop: '30px', marginBottom: '18px' }}>
-              <button onClick={() => setIsAdding(true)}>Add Product</button>
+              <button onClick={() => setIsAdding(true)} class="button-7" role="button">Add Product</button>
             </div>
           </header>
         );
@@ -77,10 +77,10 @@ const Dashboard = ({ setIsAuthenticated }) => {
               <tr>
                   <th>No.</th>
                   <th>Image</th>
-                  <th>Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Salary</th>
+                  <th>Product</th>
+                  <th>Origin</th>
+                  <th>Description</th>
+                  <th>Price</th>
                   <th>Date</th>
                   <th colSpan={2} className="text-center">
                   Actions
@@ -98,14 +98,14 @@ const Dashboard = ({ setIsAuthenticated }) => {
                         width:100,
                       }}></img></td>
                       <td>{product.firstName}</td>
-                      <td>{product.lastName}</td>
+                      <td>{product.origin}</td>
                       <td>{product.email}</td>
                       <td>{formatter.format(product.salary)}</td>
                       <td>{product.date} </td>
                       <td className="text-right">
                       <button
                           onClick={() => handleEdit(product.id)}
-                          className="button muted-button"
+                          class="button-8" role="button"
                       >
                           Edit
                       </button>
@@ -113,7 +113,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
                       <td className="text-left">
                       <button
                           onClick={() => handleDelete(product.id)}
-                          className="button muted-button"
+                          class="button-44" role="button"
                       >
                           Delete
                       </button>
@@ -133,7 +133,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
 
     const Add = ({ products, setProductsData, setIsAdding }) => {
         const [prodName, setProdName] = useState('');
-        const [lastName, setLastName] = useState('');
+        const [origin, setLastName] = useState('');
         const [description, setEmail] = useState('');
         const [salary, setSalary] = useState('');
         const [date, setDate] = useState('');
@@ -142,7 +142,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
         const handleAdd = e => {
           e.preventDefault();
       
-          if (!prodName || !lastName || !description || !salary || !date) {
+          if (!prodName || !origin || !description || !salary || !date) {
             return Swal.fire({
               icon: 'error',
               title: 'Error!',
@@ -156,7 +156,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
             id,
             image,
             prodName,
-            lastName,
+            origin,
             description,
             salary,
             date,
@@ -170,7 +170,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           Swal.fire({
             icon: 'success',
             title: 'Added!',
-            text: `${prodName} ${lastName}'s data has been Added.`,
+            text: `${prodName} ${origin}'s data has been Added.`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -180,7 +180,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           <div className="small-container">
             <form onSubmit={handleAdd}>
               <h1>Add Product</h1>
-              <label htmlFor="prodName">Image</label>
+              <label htmlFor="image">Image</label>
               <input
                 id="image"
                 type="file"
@@ -188,7 +188,8 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={image}
                 onChange={e => setImage(e.target.value)}
               />
-              <label htmlFor="prodName">First Name</label>
+              < br/>
+              <label htmlFor="prodName">Product</label>
               <input
                 id="prodName"
                 type="text"
@@ -196,15 +197,17 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={prodName}
                 onChange={e => setProdName(e.target.value)}
               />
-              <label htmlFor="lastName">Last Name</label>
+              <br />
+              <label htmlFor="origin">Origin</label>
               <input
-                id="lastName"
+                id="origin"
                 type="text"
-                name="lastName"
-                value={lastName}
+                name="origin"
+                value={origin}
                 onChange={e => setLastName(e.target.value)}
               />
-              <label htmlFor="description">Email</label>
+              <br/>
+              <label htmlFor="description">Description</label>
               <input
                 id="description"
                 type="description"
@@ -212,7 +215,8 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={description}
                 onChange={e => setEmail(e.target.value)}
               />
-              <label htmlFor="salary">Salary ($)</label>
+              <br/>
+              <label htmlFor="salary">Price ($)</label>
               <input
                 id="salary"
                 type="number"
@@ -220,6 +224,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={salary}
                 onChange={e => setSalary(e.target.value)}
               />
+              <br/>
               <label htmlFor="date">Date</label>
               <input
                 id="date"
@@ -228,6 +233,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={date}
                 onChange={e => setDate(e.target.value)}
               />
+              <br/>
               <div style={{ marginTop: '30px' }}>
                 <input type="submit" value="Add" />
                 <input
@@ -243,19 +249,19 @@ const Dashboard = ({ setIsAuthenticated }) => {
         );
     };
 
-    const Edit = ({ products, selectedEmployee, setProductsData, setIsEditing }) => {
-        const id = selectedEmployee.id;
-      
-        const [prodName, setProdName] = useState(selectedEmployee.prodName);
-        const [lastName, setLastName] = useState(selectedEmployee.lastName);
-        const [description, setEmail] = useState(selectedEmployee.description);
-        const [salary, setSalary] = useState(selectedEmployee.salary);
-        const [date, setDate] = useState(selectedEmployee.date);
+    const Edit = ({ products, selectedProduct, setProductsData, setIsEditing }) => {
+        const id = selectedProduct.id;
+        const [image, setImage] = useState(null);
+        const [prodName, setProdName] = useState(selectedProduct.prodName);
+        const [origin, setLastName] = useState(selectedProduct.origin);
+        const [description, setEmail] = useState(selectedProduct.description);
+        const [salary, setSalary] = useState(selectedProduct.salary);
+        const [date, setDate] = useState(selectedProduct.date);
       
         const handleUpdate = e => {
           e.preventDefault();
       
-          if (!prodName || !lastName || !description || !salary || !date) {
+          if (!prodName || !origin || !description || !salary || !date) {
             return Swal.fire({
               icon: 'error',
               title: 'Error!',
@@ -267,7 +273,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           const product = {
             id,
             prodName,
-            lastName,
+            origin,
             description,
             salary,
             date,
@@ -287,7 +293,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
           Swal.fire({
             icon: 'success',
             title: 'Updated!',
-            text: `${product.prodName} ${product.lastName}'s data has been updated.`,
+            text: `${product.prodName} ${product.origin}'s data has been updated.`,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -297,7 +303,16 @@ const Dashboard = ({ setIsAuthenticated }) => {
           <div className="small-container">
             <form onSubmit={handleUpdate}>
               <h1>Edit Product</h1>
-              <label htmlFor="prodName">First Name</label>
+              <label htmlFor="image">Image</label>
+              <input
+                id="image"
+                type="file"
+                name="image"
+                value={image}
+                onChange={e => setImage(e.target.value)}
+              />
+              <br/>
+              <label htmlFor="prodName">Product</label>
               <input
                 id="prodName"
                 type="text"
@@ -305,15 +320,17 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={prodName}
                 onChange={e => setProdName(e.target.value)}
               />
-              <label htmlFor="lastName">Last Name</label>
+              <br/>
+              <label htmlFor="origin">Origin</label>
               <input
-                id="lastName"
+                id="origin"
                 type="text"
-                name="lastName"
-                value={lastName}
+                name="origin"
+                value={origin}
                 onChange={e => setLastName(e.target.value)}
               />
-              <label htmlFor="description">Email</label>
+              <br/>
+              <label htmlFor="description">Description</label>
               <input
                 id="description"
                 type="description"
@@ -321,14 +338,16 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={description}
                 onChange={e => setEmail(e.target.value)}
               />
-              <label htmlFor="salary">Salary ($)</label>
+              <br/>
+              <label htmlFor="price">Price ($)</label>
               <input
-                id="salary"
+                id="price"
                 type="number"
-                name="salary"
+                name="price"
                 value={salary}
                 onChange={e => setSalary(e.target.value)}
               />
+              <br/>
               <label htmlFor="date">Date</label>
               <input
                 id="date"
@@ -337,6 +356,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
                 value={date}
                 onChange={e => setDate(e.target.value)}
               />
+              <br/>
               <div style={{ marginTop: '30px' }}>
                 <input type="submit" value="Update" />
                 <input
@@ -377,7 +397,7 @@ const Dashboard = ({ setIsAuthenticated }) => {
         {isEditing && (
           <Edit
             products={products}
-            selectedEmployee={selectedEmployee}
+            selectedProduct={selectedProduct}
             setProductsData={setProductsData}
             setIsEditing={setIsEditing}
           />

@@ -8,7 +8,7 @@ export function ItemDetailPage(props) {
     
     return (
         <div className="container">
-            <div className="row product pricing-tables">
+            <div className="row pricing-tables">
                 <section class="section" id="product">
                 <div class="container">
                     <div class="row">
