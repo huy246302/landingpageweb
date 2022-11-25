@@ -1,4 +1,5 @@
 import React from 'react';
+import { employeesData } from '../../data';
 
 export const ItemPage = () => {
   const list = [{

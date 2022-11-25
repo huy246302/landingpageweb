@@ -3,8 +3,11 @@ import React from 'react'
 
 export function ItemDetailPage(props) {
     const {id} = useParams();
-    console.log(id)
+    console.log(id);
+    
     return (
-        <div>ItemDetailPage</div>
+        <div className="container">
+                <div>{id}</div>
+        </div>
     )
 }
