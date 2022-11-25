@@ -1,8 +1,6 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import { ServicePage } from "./pages/Service/ServicePage";
 import { AboutPage } from "./pages/About/AboutPage";
@@ -10,8 +8,17 @@ import { PricingPage } from "./pages/Pricing/PricingPage";
 import { ItemPage } from "./pages/Item/ItemPage";
 import { LoginPage } from "./pages/Login/LoginPage";
 import { PageLayout} from "./pages/Layout/PageLayout";
+import { ItemDetailPage } from "./pages/Item/ItemDetailPage";
+import { DashboardPage } from "./pages/Dashboard/DashboardPage";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+
+  useEffect(() => {
+    setIsAuthenticated(JSON.parse(localStorage.getItem('is_authenticated')));
+    console.log('isAuthenticated',isAuthenticated);
+  }, []);
+
   return (
     <>
       <Routes>
@@ -21,8 +28,10 @@ function App() {
           <Route path="/about" element={<AboutPage/>}/>
           <Route path="/pricing" element={<PricingPage/>}/>
           <Route path="/item" element={<ItemPage/>}/>
+          <Route path="/item/:id" element={<ItemDetailPage />} />
         </Route>
-        <Route path="/login" element={<LoginPage />}/>
+        <Route path="/dashboard" element={<DashboardPage setIsAuthenticated={setIsAuthenticated} />}/>
+        <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated}/>}/>
       </Routes>
     </>
   );

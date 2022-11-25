@@ -4,51 +4,46 @@ import Logo7 from '../../assets/images/about-right-dec.png'
 
 const About = () => {
     return (
-        <div id="about" class="about-us section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 align-self-center">
-                        <div class="section-heading">
-                            <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+        <div id="about" className="about-us section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6 align-self-center">
+                        <div className="section-heading">
+                            <h4>Về <em>những gì nhóm làm</em></h4>
                             <img src={Logo6} alt="" />
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+                            <p>Qua quá trình 3 tháng trao đổi và giải quyết,nhóm em đã làm những công việc cần thiết để lập trình nên web app đặt hàng foody</p>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="box-item">
-                                    <h4><a href="#">Maintance Problems</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="box-item">
+                                    <h4><a href="#">Xử lý các vấn đề</a></h4>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="box-item">
-                                    <h4><a href="#">24/7 Support &amp; Help</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                            <div className="col-lg-6">
+                                <div className="box-item">
+                                    <h4><a href="#">24/7 hỗ trợ &amp; trợ giúp</a></h4>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="box-item">
-                                    <h4><a href="#">Fixing Issues About</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                            <div className="col-lg-6">
+                                <div className="box-item">
+                                    <h4><a href="#">Duy trì app</a></h4>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="box-item">
-                                    <h4><a href="#">Co. Development</a></h4>
-                                    <p>Lorem Ipsum Text</p>
+                            <div className="col-lg-6">
+                                <div className="box-item">
+                                    <h4><a href="#">Phát triển các chức năng</a></h4>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut labore et dolore adipiscing  magna.</p>
-                                <div class="gradient-button">
-                                    <a href="#">Start 14-Day Free Trial</a>
+                            <div className="col-lg-12">
+                                <div className="gradient-button">
+                                    <a href="#">Bắt đầu 14-Day dùng thử</a>
                                 </div>
-                                <span>*No Credit Card Required</span>
+                                <span>*Không cần thẻ tín dụng</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="right-image">
+                    <div className="col-lg-6">
+                        <div className="right-image">
                             <img src={Logo7} alt="" />
                         </div>
                     </div>

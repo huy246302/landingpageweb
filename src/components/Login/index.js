@@ -3,22 +3,37 @@ import React from 'react'
 const Login = () => {
   return (
     <div>
-        <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form>
-                <label>
-                <p>Username</p>
-                <input type="text" />
-                </label>
-                <label>
-                <p>Password</p>
-                <input type="password" />
-                </label>
-                <div>
-                <button type="submit">Submit</button>
-                </div>
-            </form>
+        <div className="Auth-form-container">
+      <form className="Auth-form">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign In</h3>
+          <div className="form-group mt-3">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="form-control mt-1"
+              placeholder="Enter email"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control mt-1"
+              placeholder="Enter password"
+            />
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <a href="/dashboard" className="btn btn-primary">
+            Submit
+            </a>
+          </div>
+          <p className="forgot-password text-right mt-2">
+            Forgot <a href="/#">password?</a>
+          </p>
         </div>
+      </form>
+    </div>
     </div>
   )
 }
